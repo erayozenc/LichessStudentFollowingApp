@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/allStudentFragment">
+
+    <fragment
+        android:id="@+id/allStudentFragment"
+        android:name="com.example.lichessapp2.ui.fragments.AllStudentFragment"
+        android:label="AllStudentFragment" >
+        <action
+            android:id="@+id/action_allStudentFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+        <action
+            android:id="@+id/action_allStudentFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.lichessapp2.ui.fragments.AddStudentFragment"
+        android:label="AddStudentFragment" >
+        <action
+            android:id="@+id/action_addStudentFragment_to_allStudentFragment"
+            app:destination="@id/allStudentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.example.lichessapp2.ui.fragments.StudentFragment"
+        android:label="StudentFragment" >
+        <action
+            android:id="@+id/action_studentFragment_to_allStudentFragment"
+            app:destination="@id/allStudentFragment" />
+        <argument
+            android:name="student"
+            app:argType="com.example.lichessapp2.model.Student" />
+    </fragment>
+</navigation>
